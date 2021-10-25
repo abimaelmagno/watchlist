@@ -1,0 +1,21 @@
+<div class='container'>
+ <div class="card">
+  <div class="card-header">
+  <h1> <%= @list.name %> 
+  </div>
+  <div class="card-body">
+  <% @list.bookmarks.each do |bookmark| %>
+      <li class="card-text list-group-item">Review:<%= bookmark.movie.title %></li>
+      <li class="card-text list-group-item">Rating:<%= bookmark.movie.overview %></li>
+      <li class="card-text list-group-item">Rating:<%= bookmark.movie.poster_url %></li>
+      <li class="card-text list-group-item">Rating:<%= bookmark.movie.rating %></li>
+      <%= link_to 'Remove bookmark', bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
+<hr>
+  <p type="button" class="btn btn-link"><%= link_to 'Create a bookmark', new_list_bookmark_path(@list)%></p>
+<hr>
+  
+   <p type="button" class="btn btn-link"><%= link_to 'Back to lists', lists_path %></p>
+ </div>
+ </div>
+</div>

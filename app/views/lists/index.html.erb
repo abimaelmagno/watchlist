@@ -1,0 +1,19 @@
+
+<div class="home-banner">
+  <h1>Salve any kind of movie</h1>
+
+<div class= 'navbar-lewagon fixed-top'>
+ <div class="d-flex align-items-center justify-content-between mb-3">
+  <img src= "https://source.unsplash.com/ny-lHmsHYHk" class="logo" >
+  <%= link_to 'Create a new List', new_list_path, class: "btn-flat" %>
+ </div>  
+ </div>
+ 
+ <div class="btn-group-vertical">
+ <% @lists.each do |list| %>
+ <div class="d-flex align-items-right">
+  <%= link_to list.name, list_path(list), class:"btn btn-info"%>
+ </div> 
+ <% end %>
+ </div>
+</div>
