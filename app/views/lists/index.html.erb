@@ -13,7 +13,10 @@
  <% @lists.each do |list| %>
  <div class="d-flex align-items-right">
   <%= link_to list.name, list_path(list), class:"btn btn-info"%>
- </div> 
+    <% list.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+     </div> 
+   <% end %>
  <% end %>
  </div>
 </div>
